@@ -35,8 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - PlayerMax
   m_SortingLayers:
   - name: background
     uniqueID: 3946550931
