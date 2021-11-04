@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
@@ -25,8 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - EnnemiesJehan
   - 
   - 
   - 
@@ -38,6 +37,15 @@ TagManager:
   - 
   - PlayerMax
   m_SortingLayers:
+  - name: background
+    uniqueID: 3946550931
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: foreground
+    uniqueID: 3923355501
+    locked: 0
+  - name: traps
+    uniqueID: 3850915075
     locked: 0
