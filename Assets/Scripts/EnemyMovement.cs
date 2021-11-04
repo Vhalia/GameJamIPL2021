@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(_direction * speed * Time.fixedDeltaTime, rb.velocity.y);
-        animator.SetFloat("speed", rb.velocity.x);
+        animator.SetFloat("speed", Mathf.Abs(rb.velocity.x));
     }
 
     private void Flip()
