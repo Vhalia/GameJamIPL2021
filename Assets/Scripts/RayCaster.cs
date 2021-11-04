@@ -8,19 +8,29 @@ public class RayCaster : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private Vector2 direction;
 
-    public bool Cast(float gameObjectDirection)
+    public bool RayHasTouched(float gameObjectDirection)
     {
         var origin = transform.position + offset;
         var dir = direction * distance * gameObjectDirection;
         Debug.DrawRay(origin, dir, color);
-        return Physics2D.Raycast(origin, direction, distance, layersMask);
+        return Physics2D.Raycast(origin, direction * gameObjectDirection, distance, layersMask);
     }
 
-    public bool Cast()
+    public bool RayHasTouched()
     {
         var origin = transform.position + offset;
         var dir = direction * distance;
         Debug.DrawRay(origin, dir, color);
         return Physics2D.Raycast(origin, direction, distance, layersMask);
+    }
+
+    public GameObject Cast(float gameObjectDirection)
+    {
+        var origin = transform.position + offset;
+        var dir = direction * distance * gameObjectDirection;
+        Debug.DrawRay(origin, dir, color);
+        RaycastHit2D hits = Physics2D.Raycast(origin, direction * gameObjectDirection, distance, layersMask);
+        GameObject gameObjectHit = hits.rigidbody.gameObject;
+        return gameObjectHit;
     }
 }

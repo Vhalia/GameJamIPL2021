@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IEnemyMovement
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator animator;
@@ -9,10 +9,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float startDirection;
 
     private float _direction;
+    private bool _patrolling;
+    private bool _isAggro;
+    private GameObject _player;
 
     private void Awake()
     {
         _direction = startDirection;
+        _patrolling = true;
+        _isAggro = false;
     }
 
     private void Update()
@@ -24,10 +29,25 @@ public class EnemyMovement : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    public void Move()
     {
-        rb.velocity = new Vector2(_direction * speed * Time.fixedDeltaTime, rb.velocity.y);
+        if (_patrolling) MoveWhenPatrolling();
+        else if (_isAggro && _player != null) MoveWhenAggro(_player);
         animator.SetFloat("speed", Mathf.Abs(rb.velocity.x));
+    }
+
+    private void MoveWhenPatrolling()
+    {
+        _isAggro = false;
+        _patrolling = true;
+        rb.velocity = new Vector2(_direction * speed * Time.fixedDeltaTime, rb.velocity.y);
+    }
+
+    private void MoveWhenAggro(GameObject target)
+    {
+        _player = target;
+        _isAggro = true;
+        _patrolling = false;
     }
 
     public void Flip()
@@ -41,5 +61,8 @@ public class EnemyMovement : MonoBehaviour
 
 public interface IEnemyMovement
 {
-
+    public void Move();
+    public void Flip();
 }
+
+

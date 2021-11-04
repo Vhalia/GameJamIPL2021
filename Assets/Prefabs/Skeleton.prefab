@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 8701297290335339212}
   - component: {fileID: 8701297290335339215}
   - component: {fileID: 8701297290335339214}
-  - component: {fileID: 8701297290335339210}
-  - component: {fileID: 2000486726}
+  - component: {fileID: 715421336}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -174,7 +173,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.36130923, y: 0.038792133}
   m_Size: {x: 1.7101, y: 3.401513}
   m_Direction: 0
---- !u!114 &8701297290335339210
+--- !u!114 &715421336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,57 +182,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8701297290335339200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917251768fdd86a4f8c8a8d5a008849f, type: 3}
+  m_Script: {fileID: 11500000, guid: 05f7c55c0bb3a6a4092e13190715f471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8701297290335339215}
-  animator: {fileID: 8701297290335339202}
-  speed: 50
-  startDirection: 1
---- !u!114 &2000486726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701297290335339200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93261b9e5da0c04baabba398ffa4d38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDetectingWall:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8701297290335339210}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDetectingLedge:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8701297290335339210}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  wallCheck: {fileID: 8701297291278709054}
-  groundCheck: {fileID: 8701297290481339977}
+  wallCheck: {fileID: 8701297291278709055}
+  groundCheck: {fileID: 8701297290481339978}
+  entityData: {fileID: 11400000, guid: 8cb610d90d27a334aa9e7d8e8c86d145, type: 2}
+  idleStateData: {fileID: 11400000, guid: 0b08edcc1ca637d43b6528d289c72416, type: 2}
+  runStateData: {fileID: 11400000, guid: 24015956bbb9715428cbfa5f759ee39e, type: 2}
 --- !u!1 &8701297290481339977
 GameObject:
   m_ObjectHideFlags: 0
