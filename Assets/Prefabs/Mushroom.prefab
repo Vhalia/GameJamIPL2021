@@ -113,8 +113,7 @@ GameObject:
   - component: {fileID: 8178974578471159307}
   - component: {fileID: 1408463708}
   - component: {fileID: 1408463707}
-  - component: {fileID: 1408463709}
-  - component: {fileID: 1408463706}
+  - component: {fileID: 1726760789}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -221,7 +220,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -246,7 +245,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.041287422, y: -0.4362497}
   m_Size: {x: 1.5298996, y: 2.4036922}
   m_Direction: 0
---- !u!114 &1408463709
+--- !u!114 &1726760789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,54 +254,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8178974578471159301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917251768fdd86a4f8c8a8d5a008849f, type: 3}
+  m_Script: {fileID: 11500000, guid: 05f7c55c0bb3a6a4092e13190715f471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1408463708}
-  animator: {fileID: 8178974578471159307}
-  speed: 75
-  startDirection: 1
---- !u!114 &1408463706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8178974578471159301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93261b9e5da0c04baabba398ffa4d38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDetectingWall:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1408463709}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDetectingLedge:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1408463709}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  wallCheck: {fileID: 3491859170029141019}
-  groundCheck: {fileID: 4278290332055381916}
+  wallCheck: {fileID: 3159757380550718220}
+  groundCheck: {fileID: 7610109284744171934}
+  entityData: {fileID: 11400000, guid: 19d90bb96bd414341877cb6d108b1460, type: 2}
+  idleStateData: {fileID: 11400000, guid: ec46af2bf1be43142acdbf08e0a16a55, type: 2}
+  runStateData: {fileID: 11400000, guid: 36941760c460af0469d38c497e23318f, type: 2}

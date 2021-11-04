@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbe7a1e4c3242146be8c186d98de9a0, type: 3}
   m_Name: goblinRunData
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 200

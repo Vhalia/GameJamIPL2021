@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 4603861447350650190}
   - component: {fileID: 4603861447350650191}
   - component: {fileID: 4603861447350650188}
-  - component: {fileID: 4603861447350650189}
   - component: {fileID: 4603861447350650194}
-  - component: {fileID: 1712877871}
-  - component: {fileID: 815854339}
+  - component: {fileID: 898007193}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -119,7 +117,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -128,22 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4603861447350650189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603861447350650192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917251768fdd86a4f8c8a8d5a008849f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4603861447350650188}
-  animator: {fileID: 4603861447350650194}
-  speed: 200
-  startDirection: 1
 --- !u!95 &4603861447350650194
 Animator:
   serializedVersion: 3
@@ -163,7 +145,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1712877871
+--- !u!114 &898007193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,61 +154,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4603861447350650192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93261b9e5da0c04baabba398ffa4d38, type: 3}
+  m_Script: {fileID: 11500000, guid: 05f7c55c0bb3a6a4092e13190715f471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDetectingWall:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4603861447350650189}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDetectingLedge:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4603861447350650189}
-        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  wallCheck: {fileID: 4603861447611636496}
-  groundCheck: {fileID: 4603861448279739377}
-  aggroCheck: {fileID: 815854339}
---- !u!114 &815854339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603861447350650192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dec3c831b85a33499c26e8ea84effaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  color: {r: 0.98894453, g: 0, b: 1, a: 1}
-  layersMask:
-    serializedVersion: 2
-    m_Bits: 2147483648
-  distance: 5
-  direction: {x: 1, y: 0}
+  wallCheck: {fileID: 4603861447611636499}
+  groundCheck: {fileID: 4603861448279739376}
+  entityData: {fileID: 11400000, guid: 6a590e723eb889c43a3678c619888613, type: 2}
+  idleStateData: {fileID: 11400000, guid: fb271e53fa594144b9d015c81c6d8e37, type: 2}
+  runStateData: {fileID: 11400000, guid: 0a47d99b482b50e469d8a97f3052d680, type: 2}
 --- !u!1 &4603861447611636496
 GameObject:
   m_ObjectHideFlags: 0
