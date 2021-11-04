@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4603861447350650188}
   - component: {fileID: 4603861447350650189}
   - component: {fileID: 4603861447350650194}
+  - component: {fileID: 1712877871}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -140,10 +141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4603861447350650188}
   animator: {fileID: 4603861447350650194}
-  speed: 100
+  speed: 200
   startDirection: 1
-  groundCheck: {fileID: 4603861448279739377}
-  wallCheck: {fileID: 4603861447611636496}
 --- !u!95 &4603861447350650194
 Animator:
   serializedVersion: 3
@@ -163,6 +162,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1712877871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603861447350650192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93261b9e5da0c04baabba398ffa4d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDetectingWall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4603861447350650189}
+        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
+        m_MethodName: Flip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDetectingLedge:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4603861447350650189}
+        m_TargetAssemblyTypeName: EnemyMovement, Assembly-CSharp
+        m_MethodName: Flip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  wallCheck: {fileID: 4603861447611636496}
+  groundCheck: {fileID: 4603861448279739377}
 --- !u!1 &4603861447611636496
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4603861447611636496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: -0.31, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4603861447350650195}
@@ -206,12 +249,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dec3c831b85a33499c26e8ea84effaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: -1, y: 0, z: 0}
   color: {r: 0, g: 0.96862745, b: 0, a: 1}
   layersMask:
     serializedVersion: 2
     m_Bits: 64
-  distance: 1
+  distance: 2
   direction: {x: 1, y: 0}
 --- !u!1 &4603861448279739377
 GameObject:
