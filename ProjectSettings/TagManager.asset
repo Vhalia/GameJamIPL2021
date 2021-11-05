@@ -50,3 +50,6 @@ TagManager:
   - name: traps
     uniqueID: 3850915075
     locked: 0
+  - name: bush
+    uniqueID: 662199435
+    locked: 0
