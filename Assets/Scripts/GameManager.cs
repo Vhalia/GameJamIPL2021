@@ -33,7 +33,9 @@ public class GameManager : SingletonBehaviour<GameManager>
     {     
         StartCoroutine(SwitchScene(firstScene, () => OnNewGame?.Invoke()));
     }
-
+    public void StartSwitchSceneCoroutine(string sceneToLoad) {
+        StartCoroutine(SwitchScene(sceneToLoad));
+    }
     public IEnumerator SwitchScene(string sceneToLoad, Action callback = null)
     {
         fillHeart();
@@ -46,7 +48,7 @@ public class GameManager : SingletonBehaviour<GameManager>
             yield return SceneManager.UnloadSceneAsync(currentScene);
 
         }
-        Debug.Log("Les 2 boules d'une scene");
+        Debug.Log("Load new scene");
         yield return SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
         callback?.Invoke();
@@ -85,7 +87,6 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     }
     public void LooseOneSwordCharge() {
-        Debug.Log("je perd une grosse épée ça fait du bien");
         Swords[numberOfSwords - 1].enabled = false;
         numberOfSwords--;
     }

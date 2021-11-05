@@ -15,7 +15,7 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
 
     public void SwitchScene(string sceneToLoad)
     {
-        StartCoroutine(GameManager.instance.SwitchScene(sceneToLoad));
+        GameManager.instance.StartSwitchSceneCoroutine(sceneToLoad);
     }
 
     public void EndGame()
