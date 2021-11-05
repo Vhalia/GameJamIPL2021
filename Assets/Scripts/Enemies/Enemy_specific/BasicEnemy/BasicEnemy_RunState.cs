@@ -34,5 +34,10 @@ public class BasicEnemy_RunState : RunState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if(isPlayerDetected)
+        {
+            Debug.Log(basicEnemy + " run -> aggro ");
+            finiteStateMachine.ChangeState(basicEnemy.aggroState);
+        }
     }
 }
