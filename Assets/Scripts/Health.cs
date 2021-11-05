@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour, IHealth
@@ -7,9 +8,11 @@ public class Health : MonoBehaviour, IHealth
     [SerializeField] private string animHurtName;
     [SerializeField] private string animDieName;
     [SerializeField] private Animator animator;
+    [SerializeField] private float invincibilityDuration;
 
     private bool isDead = false;
     private int _currentHealth;
+    private bool canBeDamaged = true;
 
     void Awake()
     {
@@ -18,9 +21,26 @@ public class Health : MonoBehaviour, IHealth
 
     public void TakeDamage(int damage)
     {
+        if (canBeDamaged)
+        {
+            StartCoroutine(loseHealthDelay(damage));
+        }
+        
+    }
+
+    private IEnumerator loseHealthDelay(int damage)
+    {
+        canBeDamaged = false;
+        loseHealth(damage);
+        yield return new WaitForSeconds(invincibilityDuration);
+        canBeDamaged = true;
+    }
+
+    private void loseHealth(int damage)
+    {
         _currentHealth -= damage;
         animator.SetTrigger(animHurtName);
-        if (_currentHealth <= 0) 
+        if (_currentHealth <= 0)
             Die();
     }
 
