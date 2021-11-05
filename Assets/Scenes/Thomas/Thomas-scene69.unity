@@ -7603,46 +7603,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1646955520}
     m_Modifications:
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.7951565
-      objectReference: {fileID: 0}
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.39757824
-      objectReference: {fileID: 0}
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377140655}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NewCheckpoint
-      objectReference: {fileID: 0}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 439635723}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: m_Name
@@ -7708,12 +7673,6 @@ PrefabInstance:
 --- !u!4 &439635722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4729203621839508544, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-    type: 3}
-  m_PrefabInstance: {fileID: 439635721}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &439635723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
     type: 3}
   m_PrefabInstance: {fileID: 439635721}
   m_PrefabAsset: {fileID: 0}
@@ -7799,31 +7758,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1646955520}
     m_Modifications:
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377140655}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 577492414}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: m_Name
@@ -7889,12 +7828,6 @@ PrefabInstance:
 --- !u!4 &577492413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4729203621839508544, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-    type: 3}
-  m_PrefabInstance: {fileID: 577492412}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &577492414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
     type: 3}
   m_PrefabInstance: {fileID: 577492412}
   m_PrefabAsset: {fileID: 0}
@@ -9075,46 +9008,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1646955520}
     m_Modifications:
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.234013
-      objectReference: {fileID: 0}
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 1.1170065
-      objectReference: {fileID: 0}
-    - target: {fileID: -6854941793231069572, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377140655}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NewCheckpoint
-      objectReference: {fileID: 0}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 705845017}
-    - target: {fileID: -3233889862128735195, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
         type: 3}
       propertyPath: m_Name
@@ -9183,12 +9081,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 705845015}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &705845017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3849811867974214495, guid: 8ffbe5b0e862d994b96da161ea089fa0,
-    type: 3}
-  m_PrefabInstance: {fileID: 705845015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &719502220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9200,11 +9092,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701297290335339200, guid: 70841b1637129b344b5fd94ad1710692,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8701297290335339201, guid: 70841b1637129b344b5fd94ad1710692,
         type: 3}
@@ -9261,33 +9148,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8701297290335339213, guid: 70841b1637129b344b5fd94ad1710692,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 719502222}
-    - target: {fileID: 8701297290481339977, guid: 70841b1637129b344b5fd94ad1710692,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701297291278709054, guid: 70841b1637129b344b5fd94ad1710692,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8701297290335339213, guid: 70841b1637129b344b5fd94ad1710692, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70841b1637129b344b5fd94ad1710692, type: 3}
 --- !u!4 &719502221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8701297290335339201, guid: 70841b1637129b344b5fd94ad1710692,
-    type: 3}
-  m_PrefabInstance: {fileID: 719502220}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &719502222 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8701297290335339202, guid: 70841b1637129b344b5fd94ad1710692,
     type: 3}
   m_PrefabInstance: {fileID: 719502220}
   m_PrefabAsset: {fileID: 0}
@@ -9302,11 +9167,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Goblin
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603861447350650192, guid: b8c9c878c7882ba41adaf2cfe3efd77c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4603861447350650195, guid: b8c9c878c7882ba41adaf2cfe3efd77c,
         type: 3}
@@ -9363,16 +9223,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4603861447611636496, guid: b8c9c878c7882ba41adaf2cfe3efd77c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603861448279739377, guid: b8c9c878c7882ba41adaf2cfe3efd77c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c9c878c7882ba41adaf2cfe3efd77c, type: 3}
 --- !u!4 &812422927 stripped
@@ -9384,12 +9234,6 @@ Transform:
 --- !u!4 &839578392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5178910606226518103, guid: fdb63796260fb004386e569324916332,
-    type: 3}
-  m_PrefabInstance: {fileID: 5178910606461797199}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &855811631 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7348160809629981859, guid: fdb63796260fb004386e569324916332,
     type: 3}
   m_PrefabInstance: {fileID: 5178910606461797199}
   m_PrefabAsset: {fileID: 0}
@@ -21034,30 +20878,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1375142577}
     m_Modifications:
-    - target: {fileID: 839578393, guid: fdb63796260fb004386e569324916332, type: 3}
-      propertyPath: attackStateData
-      value: 
-      objectReference: {fileID: 11400000, guid: 7b1c09889e590a54c86a3e5b6bf88624,
-        type: 2}
-    - target: {fileID: 839578393, guid: fdb63796260fb004386e569324916332, type: 3}
-      propertyPath: teleportStateData
-      value: 
-      objectReference: {fileID: 11400000, guid: 75b2b9bc6b4fe9440b3baca682afc714,
-        type: 2}
-    - target: {fileID: 839578393, guid: fdb63796260fb004386e569324916332, type: 3}
-      propertyPath: hitBoxAttackTransform
-      value: 
-      objectReference: {fileID: 855811631}
-    - target: {fileID: 839578394, guid: fdb63796260fb004386e569324916332, type: 3}
-      propertyPath: m_Mass
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 859586473908419858, guid: fdb63796260fb004386e569324916332,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 5178910606226518103, guid: fdb63796260fb004386e569324916332,
         type: 3}
       propertyPath: m_RootOrder
@@ -21117,16 +20937,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TroVener
-      objectReference: {fileID: 0}
-    - target: {fileID: 7348160809629981859, guid: fdb63796260fb004386e569324916332,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 7348160809629981859, guid: fdb63796260fb004386e569324916332,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb63796260fb004386e569324916332, type: 3}

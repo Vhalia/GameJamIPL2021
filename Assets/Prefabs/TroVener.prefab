@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7348160809629981859}
+  - component: {fileID: 855811632}
   m_Layer: 0
   m_Name: HitBoxAtk
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24,12 +25,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859586473908419858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.31, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5178910606226518103}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855811632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859586473908419858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173791be16549d348be8593629b17122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitBoxAttack: {fileID: 859586473908419858}
+  radius: 1.95
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &2693501342967360676
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +321,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -344,10 +362,12 @@ MonoBehaviour:
   groundCheck: {fileID: 799258358901532898}
   playerCheck: {fileID: 5502898716580928122}
   playerInRangeCheck: {fileID: 7576608339053852389}
+  hitBoxAttackTransform: {fileID: 7348160809629981859}
   entityData: {fileID: 11400000, guid: 6f6748070fb9f6c4f893b4f5c582b627, type: 2}
   idleStateData: {fileID: 11400000, guid: 8b341c7f50c42f14eaecd878607adf06, type: 2}
-  teleportStateData: {fileID: 11400000, guid: 3bea7e7e2167d3c42aed093bf9b6295e, type: 2}
+  teleportStateData: {fileID: 11400000, guid: 75b2b9bc6b4fe9440b3baca682afc714, type: 2}
   aggroStateData: {fileID: 11400000, guid: fd91732fca7a8334692a622c0a23c4e4, type: 2}
+  attackStateData: {fileID: 11400000, guid: 7b1c09889e590a54c86a3e5b6bf88624, type: 2}
 --- !u!1 &7653966417760369830
 GameObject:
   m_ObjectHideFlags: 0
