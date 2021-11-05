@@ -12,6 +12,9 @@ public class State
 
     protected string animatorBooleanName;
 
+    protected bool isPlayerDetected;
+    protected bool isPlayerInRange;
+
     public State(FiniteStateMachine finiteStateMachine, Entity entity, string animatorBooleanName)
     {
         this.finiteStateMachine = finiteStateMachine;
@@ -23,6 +26,8 @@ public class State
     {
         startTime = Time.time;
         entity.Animator.SetBool(animatorBooleanName, true);
+        isPlayerDetected = entity.DetectPlayer();
+        isPlayerInRange = entity.PlayerIsInRange();
     }
 
     public virtual void Exit()
@@ -38,7 +43,8 @@ public class State
 
     public virtual void PhysicsUpdate()
     {
-
+        isPlayerDetected = entity.DetectPlayer();
+        isPlayerInRange = entity.PlayerIsInRange();
     }
 
 

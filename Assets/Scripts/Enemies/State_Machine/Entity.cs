@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
 
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform playerCheck;
+    [SerializeField] private Transform playerInRangeCheck;
 
 
     public FiniteStateMachine finiteStateMachine;
@@ -17,11 +19,15 @@ public class Entity : MonoBehaviour
 
     private RayCaster _wallCheckCast;
     private RayCaster _groundCheckCast;
+    private RayCaster _playerCheckCast;
+    private RayCaster _playerInRangeCheckCast;
 
     public virtual void Start()
     {
         _wallCheckCast = wallCheck.GetComponent<RayCaster>();
         _groundCheckCast = groundCheck.GetComponent<RayCaster>();
+        _playerCheckCast = playerCheck.GetComponent<RayCaster>();
+        _playerInRangeCheckCast = playerInRangeCheck.GetComponent<RayCaster>();
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         FacingDirection = 1;
@@ -52,6 +58,16 @@ public class Entity : MonoBehaviour
     public virtual bool GroundIsDetected()
     {
         return _groundCheckCast.RayHasTouched();
+    }
+
+    public virtual bool DetectPlayer()
+    {
+        return _playerCheckCast.RayHasTouched(FacingDirection);
+    }
+
+    public virtual bool PlayerIsInRange()
+    {
+        return _playerInRangeCheckCast.RayHasTouched(FacingDirection);
     }
 
     public virtual void Flip()

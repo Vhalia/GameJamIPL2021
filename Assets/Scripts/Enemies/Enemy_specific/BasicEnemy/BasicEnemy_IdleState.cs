@@ -31,5 +31,10 @@ public class BasicEnemy_IdleState : IdleState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if(isPlayerDetected)
+        {
+            Debug.Log(basicEnemy + " idle -> aggro ");
+            finiteStateMachine.ChangeState(basicEnemy.aggroState);
+        }
     }
 }
