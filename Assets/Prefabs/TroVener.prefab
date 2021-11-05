@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348160809629981859}
   - component: {fileID: 855811632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBoxAtk
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 839578394}
   - component: {fileID: 839578395}
   - component: {fileID: 839578393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TroVener
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -75,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391124707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -0.64, z: -4.0790176}
+  m_LocalPosition: {x: 1.2, y: -0.64, z: -0.74}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4603861447350650195}
@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 4603861447350650188}
   - component: {fileID: 4603861447350650194}
   - component: {fileID: 898007193}
+  - component: {fileID: 8407565467525374352}
   m_Layer: 7
   m_Name: Goblin
   m_TagString: Untagged
@@ -318,6 +319,24 @@ MonoBehaviour:
   runStateData: {fileID: 11400000, guid: 0a47d99b482b50e469d8a97f3052d680, type: 2}
   aggroStateData: {fileID: 11400000, guid: b139b23b1a057494b8bab42a6fdd0af0, type: 2}
   attackStateData: {fileID: 11400000, guid: b066a812498f17e40aefcbe559d922d0, type: 2}
+--- !u!114 &8407565467525374352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603861447350650192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682fcab87fa7445a9cb22260edca75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  animHurtName: Hurt
+  animDieName: Die
+  animator: {fileID: 4603861447350650194}
+  invincibilityDuration: 0
+  fallAfterDeadDuration: 0
 --- !u!1 &4603861447611636496
 GameObject:
   m_ObjectHideFlags: 0
