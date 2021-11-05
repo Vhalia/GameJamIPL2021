@@ -29,4 +29,12 @@ public class ComplexEnemy_TeleportState : TeleportState
     {
         base.PhysicsUpdate();
     }
+
+    public override void TeleportToPlayer()
+    {
+        base.TeleportToPlayer();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        complexEnemy.transform.position = new Vector2(player.transform.position.x + stateData.offset, complexEnemy.transform.position.y);
+        finiteStateMachine.ChangeState(complexEnemy.attackState);
+    }
 }

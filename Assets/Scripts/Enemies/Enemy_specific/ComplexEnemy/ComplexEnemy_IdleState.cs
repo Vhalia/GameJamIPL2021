@@ -14,7 +14,7 @@ public class ComplexEnemy_IdleState : IdleState
 
     public override void Enter()
     {
-        base.Enter();
+        entity.SetVelocity(0f);
     }
 
 
@@ -26,12 +26,17 @@ public class ComplexEnemy_IdleState : IdleState
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();
+        
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if (isPlayerDetected)
+        {
+            Debug.Log(complexEnemy + " idle -> aggro ");
+            finiteStateMachine.ChangeState(complexEnemy.aggroState);
+        }
     }
 
 

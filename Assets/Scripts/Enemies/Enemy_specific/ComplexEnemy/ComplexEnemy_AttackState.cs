@@ -1,23 +1,21 @@
 
-public class TeleportState : State
+public class ComplexEnemy_AttackState : AttackState
 {
-    protected bool isDetectingPlayer;
-    protected Data_TeleportState stateData;
-    public TeleportState(FiniteStateMachine finiteStateMachine, Entity entity, string animatorBooleanName, Data_TeleportState stateData) : base(finiteStateMachine, entity, animatorBooleanName)
-    {
-        this.stateData = stateData;
-    }
 
+    private ComplexEnemy complexEnemy;
+
+    public ComplexEnemy_AttackState(FiniteStateMachine finiteStateMachine, Entity entity, string animatorBooleanName, Data_AttackState stateData, ComplexEnemy complexEnemy) : base(finiteStateMachine, entity, animatorBooleanName, stateData)
+    {
+        this.complexEnemy = complexEnemy;
+    }
     public override void Enter()
     {
         base.Enter();
-
     }
 
     public override void Exit()
     {
         base.Exit();
-
     }
 
     public override void LogicUpdate()
@@ -33,7 +31,5 @@ public class TeleportState : State
     public override void TeleportToPlayer()
     {
         base.TeleportToPlayer();
-        
     }
-
 }

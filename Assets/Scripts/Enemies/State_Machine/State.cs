@@ -47,5 +47,8 @@ public class State
         isPlayerInRange = entity.PlayerIsInRange();
     }
 
+    public virtual void TeleportToPlayer() 
+    { 
 
+    }
 }
