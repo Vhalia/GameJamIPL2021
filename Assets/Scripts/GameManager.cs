@@ -9,6 +9,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     [SerializeField] private string firstScene;
     [SerializeField] private UnityEvent OnNewGame;
     [SerializeField] private UnityEvent OnEndGame;
+    private GameObject lastCheckpoint;
 
     public void Quit()
     {
@@ -36,5 +37,13 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void EndGame()
     {
         OnEndGame?.Invoke();
+    }
+
+    public void NewCheckpoint(GameObject checkpoint) {
+        lastCheckpoint = checkpoint;
+    }
+
+    public void RestartToCheckpoint(GameObject player) {
+        player.transform.position = lastCheckpoint.transform.position;
     }
 }
