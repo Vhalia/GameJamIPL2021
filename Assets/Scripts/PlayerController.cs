@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,13 +11,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private CapsuleCollider2D standingCollider;
+    [SerializeField] private GameObject ceilingCheck;
+    [SerializeField] private float ceilingCheckRadius;
 
     private Rigidbody2D rb;
     private float moveInput;
     private bool canJump = false;
     private bool isFacingRight = true;
+    private bool isCrouched = false;
 
-    public bool goesRight => rb.velocity.x >= 0;
+    public bool goesRight => Input.GetAxisRaw("Horizontal") == 1;
+    public bool goesLeft => Input.GetAxisRaw("Horizontal") == -1;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +34,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Flips sprite when needed
+        if(Input.GetAxisRaw("Horizontal") != 0)
+        {
+            Flip();
+        }
 
+        //Setup conditions for jumping
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
         playerAnimator.SetBool("isGrounded", isGrounded);
 
@@ -40,28 +51,17 @@ public class PlayerController : MonoBehaviour
             canJump = true;
         }
 
-        Flip();
-
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            Crouch();
-        } else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            StopCrouch();
-        }
-
-
+        //Crouches when needed
+        CrouchController();
 
     }
 
     private void FixedUpdate()
     {
-
         Move();
 
         if (canJump)
         {
-            playerAnimator.SetTrigger("Jump");
             Jump(jumpForce);
             canJump = false;
         }
@@ -77,19 +77,44 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(float jumpForce)
     {
+        playerAnimator.SetTrigger("Jump");
         rb.AddForce(new Vector2(0f, jumpForce));
     }
 
     private void Flip()
     {
-        if(goesRight != isFacingRight)
+        if(goesLeft && isFacingRight)
         {
             var lc = transform.localScale;
-            isFacingRight = !isFacingRight;
             lc.x *= -1;
             transform.localScale = lc;
+            isFacingRight = false;
+        } else if(goesRight && !isFacingRight)
+        {
+            var lc = transform.localScale;
+            lc.x *= -1;
+            transform.localScale = lc;
+            isFacingRight = true;
         }
+    }
 
+    //Crouches and uncrouches when needed
+    private void CrouchController()
+    {
+        bool isUnderCeiling = Physics2D.OverlapCircle(ceilingCheck.transform.position, ceilingCheckRadius, groundLayer);
+
+        //If crouch key pressed and not under ceiling -> crouch
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isUnderCeiling)
+        {
+            Crouch();
+            isCrouched = true;
+        }
+        //If crouched and crouch key pressed and not under ceiling -> stop crouching
+        else if (isCrouched && !Input.GetKey(KeyCode.LeftControl) && !isUnderCeiling)
+        {
+            StopCrouch();
+            isCrouched = false;
+        }
     }
 
     private void Crouch()
@@ -111,5 +136,6 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.transform.position, groundCheckRadius);
+        Gizmos.DrawWireSphere(ceilingCheck.transform.position, ceilingCheckRadius);
     }
 }
