@@ -294,8 +294,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2025938, y: 0.038792133}
-  m_Size: {x: 2.7228642, y: 3.401513}
+  m_Offset: {x: 0.34608316, y: -0.009037256}
+  m_Size: {x: 1.216239, y: 3.3058543}
   m_Direction: 0
 --- !u!114 &715421336
 MonoBehaviour:
@@ -337,6 +337,12 @@ MonoBehaviour:
   animator: {fileID: 8701297290335339202}
   invincibilityDuration: 0
   fallAfterDeadDuration: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8701297290481339977
 GameObject:
   m_ObjectHideFlags: 0

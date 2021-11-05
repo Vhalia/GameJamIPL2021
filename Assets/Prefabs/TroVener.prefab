@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 839578394}
   - component: {fileID: 839578395}
   - component: {fileID: 839578393}
+  - component: {fileID: 59966686}
   m_Layer: 7
   m_Name: TroVener
   m_TagString: Untagged
@@ -343,8 +344,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.21602577, y: -1.1876664}
-  m_Size: {x: 1.4278699, y: 3.6907835}
+  m_Offset: {x: 0.37722588, y: -1.1876664}
+  m_Size: {x: 1.9862251, y: 3.6907835}
   m_Direction: 0
 --- !u!114 &839578393
 MonoBehaviour:
@@ -368,6 +369,30 @@ MonoBehaviour:
   teleportStateData: {fileID: 11400000, guid: 75b2b9bc6b4fe9440b3baca682afc714, type: 2}
   aggroStateData: {fileID: 11400000, guid: fd91732fca7a8334692a622c0a23c4e4, type: 2}
   attackStateData: {fileID: 11400000, guid: 7b1c09889e590a54c86a3e5b6bf88624, type: 2}
+--- !u!114 &59966686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178910606226518106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682fcab87fa7445a9cb22260edca75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  animHurtName: Hurt
+  animDieName: Die
+  animator: {fileID: 5178910606226518105}
+  invincibilityDuration: 0
+  fallAfterDeadDuration: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7653966417760369830
 GameObject:
   m_ObjectHideFlags: 0
