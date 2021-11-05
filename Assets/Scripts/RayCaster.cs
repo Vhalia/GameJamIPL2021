@@ -23,14 +23,4 @@ public class RayCaster : MonoBehaviour
         Debug.DrawRay(origin, dir, color);
         return Physics2D.Raycast(origin, direction, distance, layersMask);
     }
-
-    public GameObject Cast(float gameObjectDirection)
-    {
-        var origin = transform.position + offset;
-        var dir = direction * distance * gameObjectDirection;
-        Debug.DrawRay(origin, dir, color);
-        RaycastHit2D hits = Physics2D.Raycast(origin, direction * gameObjectDirection, distance, layersMask);
-        GameObject gameObjectHit = hits.rigidbody.gameObject;
-        return gameObjectHit;
-    }
 }
