@@ -36,4 +36,8 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
     public void TakeDamageEmptyHeart(int damage) {
         GameManager.instance.TakeDamageEmptyHeart(damage);
     }
+
+    public void LooseOneSwordCharge() {
+        GameManager.instance.LooseOneSwordCharge();
+    }
 }
