@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68719348}
   - component: {fileID: 68719349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBoxAtk
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68719347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: -0.59, z: -4.0790176}
+  m_LocalPosition: {x: 0.72, y: -0.59, z: -0.97}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8178974578471159306}
@@ -158,7 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3159757380550718220}
   - component: {fileID: 2942759452813319940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7610109284744171934}
   - component: {fileID: 5539302254201555661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -262,7 +262,8 @@ GameObject:
   - component: {fileID: 1408463708}
   - component: {fileID: 1408463707}
   - component: {fileID: 1726760789}
-  m_Layer: 0
+  - component: {fileID: 2110740131}
+  m_Layer: 7
   m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,8 +394,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041287422, y: -0.4362497}
-  m_Size: {x: 1.5298996, y: 2.4036922}
+  m_Offset: {x: 0.032399178, y: -0.43624973}
+  m_Size: {x: 2.18746, y: 2.4036922}
   m_Direction: 0
 --- !u!114 &1726760789
 MonoBehaviour:
@@ -418,3 +419,21 @@ MonoBehaviour:
   runStateData: {fileID: 11400000, guid: 36941760c460af0469d38c497e23318f, type: 2}
   aggroStateData: {fileID: 11400000, guid: 6f797ecd32faab34ea2b849476730187, type: 2}
   attackStateData: {fileID: 11400000, guid: f1a853d0d29e1174389733014d0a1712, type: 2}
+--- !u!114 &2110740131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178974578471159301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682fcab87fa7445a9cb22260edca75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  animHurtName: Hurt
+  animDieName: Die
+  animator: {fileID: 8178974578471159307}
+  invincibilityDuration: 0
+  fallAfterDeadDuration: 0
