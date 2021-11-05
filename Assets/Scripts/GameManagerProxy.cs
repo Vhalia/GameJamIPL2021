@@ -32,4 +32,12 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
     {
         GameManager.instance.RestartToCheckpoint(player);
     }
+
+    public void TakeDamageEmptyHeart(int damage) {
+        GameManager.instance.TakeDamageEmptyHeart(damage);
+    }
+
+    public void LooseOneSwordCharge() {
+        GameManager.instance.LooseOneSwordCharge();
+    }
 }

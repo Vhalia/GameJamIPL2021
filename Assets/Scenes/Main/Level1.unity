@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &183123994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1528417221912798620, guid: eddb788c738bc084e880aa59753f6b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 253047821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &253047821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +136,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900101003}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LooseOneSwordCharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 265096469, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900101003}
+    - target: {fileID: 265096469, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 900101003}
+    - target: {fileID: 265096469, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 265096469, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TakeDamageEmptyHeart
+      objectReference: {fileID: 0}
     - target: {fileID: 1528417221912798617, guid: eddb788c738bc084e880aa59753f6b00,
         type: 3}
       propertyPath: m_RootOrder
@@ -1696,7 +1726,7 @@ MonoBehaviour:
         m_MethodName: RestartToCheckpoint
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 183123994}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

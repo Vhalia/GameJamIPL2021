@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour, IHealth
 {
@@ -9,6 +10,9 @@ public class Health : MonoBehaviour, IHealth
     [SerializeField] private string animDieName;
     [SerializeField] private Animator animator;
     [SerializeField] private float invincibilityDuration;
+    [SerializeField] private float fallAfterDeadDuration;
+    [SerializeField] UnityEvent onDeath;
+    [SerializeField] IntEvent onDamage;
 
     private bool isDead = false;
     private int _currentHealth;
@@ -23,28 +27,36 @@ public class Health : MonoBehaviour, IHealth
     {
         if (canBeDamaged)
         {
-            StartCoroutine(loseHealthDelay(damage));
+            StartCoroutine(LoseHealthDelay(damage));
         }
         
     }
 
-    private IEnumerator loseHealthDelay(int damage)
+    //Invincibility time after getting hurt
+    private IEnumerator LoseHealthDelay(int damage)
     {
         canBeDamaged = false;
-        loseHealth(damage);
+        LoseHealth(damage);
         yield return new WaitForSeconds(invincibilityDuration);
         canBeDamaged = true;
     }
 
-    private void loseHealth(int damage)
+    private void LoseHealth(int damage)
     {
         _currentHealth -= damage;
         animator.SetTrigger(animHurtName);
+        onDamage?.Invoke(damage);
         if (_currentHealth <= 0)
             Die();
     }
 
     public void Die()
+    {
+        StartCoroutine(FallAfterDeadDelay());
+        
+    }
+
+    private IEnumerator FallAfterDeadDelay()
     {
         //Trigger dead animation
         if (!isDead)
@@ -53,18 +65,21 @@ public class Health : MonoBehaviour, IHealth
             isDead = true;
         }
 
-        //Destroy rigidbody
-        Rigidbody2D body = GetComponent<Rigidbody2D>();
-        Destroy(body);
-
         //Disable controller scripts
         MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
 
-        foreach(MonoBehaviour script in scripts)
+        foreach (MonoBehaviour script in scripts)
         {
             if (script != this)
                 script.enabled = false;
         }
+
+        //Delay to allow object to fall after dying
+        yield return new WaitForSeconds(fallAfterDeadDuration);
+
+        //Destroy rigidbody
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        Destroy(body);
 
         //Remove colliders
         Collider2D[] colliders = GetComponents<Collider2D>();
@@ -75,9 +90,14 @@ public class Health : MonoBehaviour, IHealth
         {
             coll.enabled = false;
         }
+        onDeath?.Invoke();
 
         //Disable this script
         this.enabled = false;
-        
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }
