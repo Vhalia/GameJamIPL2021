@@ -22,4 +22,14 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
     {
         GameManager.instance.EndGame();
     }
+
+    public void NewCheckpoint(GameObject checkpoint)
+    {
+        GameManager.instance.NewCheckpoint(checkpoint);
+    }
+
+    public void RestartToCheckpoint(GameObject player)
+    {
+        GameManager.instance.RestartToCheckpoint(player);
+    }
 }

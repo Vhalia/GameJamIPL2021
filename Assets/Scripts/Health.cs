@@ -4,9 +4,11 @@ public class Health : MonoBehaviour, IHealth
 {
 
     [SerializeField] private int maxHealth;
-    [SerializeField] private string animDieName;
     [SerializeField] private string animHurtName;
+    [SerializeField] private string animDieName;
     [SerializeField] private Animator animator;
+
+    private bool isDead = false;
     private int _currentHealth;
 
     void Awake()
@@ -24,7 +26,38 @@ public class Health : MonoBehaviour, IHealth
 
     public void Die()
     {
-        animator.SetTrigger(animDieName);
-        Destroy(gameObject);
+        //Trigger dead animation
+        if (!isDead)
+        {
+            animator.SetTrigger(animDieName);
+            isDead = true;
+        }
+
+        //Destroy rigidbody
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        Destroy(body);
+
+        //Disable controller scripts
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+
+        foreach(MonoBehaviour script in scripts)
+        {
+            if (script != this)
+                script.enabled = false;
+        }
+
+        //Remove colliders
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        if (colliders.Length == 0)
+            colliders = GetComponentsInChildren<Collider2D>();
+
+        foreach (Collider2D coll in colliders)
+        {
+            coll.enabled = false;
+        }
+
+        //Disable this script
+        this.enabled = false;
+        
     }
 }
