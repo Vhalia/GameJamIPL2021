@@ -9,4 +9,5 @@ public interface IGameManager
     void EndGame();
     void NewCheckpoint(GameObject checkpoint);
     void RestartToCheckpoint(GameObject player);
+    void TakeDamageEmptyHeart(int damage);
 }
