@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main/PersistentScene.unity
+    guid: 408d94781f9ce504bbd93b9314868b43
+  - enabled: 1
+    path: Assets/Scenes/Main/Level1.unity
+    guid: 6e1ed8ec2b14a2744b2d4784058303fa
+  - enabled: 1
+    path: Assets/Scenes/Main/Level2.unity
+    guid: 85e6fe5cb1b89524ab59a5a645949c79
+  - enabled: 0
+    path: Assets/Scenes/Max/Max-Level02-Design.unity
+    guid: 9d335672170856649944e20d17305692
   m_configObjects: {}

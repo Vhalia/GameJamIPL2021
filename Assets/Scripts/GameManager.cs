@@ -19,20 +19,18 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private GameObject lastCheckpoint;
 
-/*    public void Start()
+    public void Start()
     {
         StartNewGame();
     }
-Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
- */
+
     public void Quit()
     {
         Application.Quit();
     }
 
     public void StartNewGame()
-    {
-        
+    {     
         StartCoroutine(SwitchScene(firstScene, () => OnNewGame?.Invoke()));
     }
 
@@ -44,8 +42,11 @@ Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
         if (SceneManager.sceneCount > 1)
         {
             var currentScene = SceneManager.GetActiveScene().name;
+            Debug.Log(currentScene);
             yield return SceneManager.UnloadSceneAsync(currentScene);
+
         }
+        Debug.Log("Les 2 boules d'une scene");
         yield return SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
         callback?.Invoke();
