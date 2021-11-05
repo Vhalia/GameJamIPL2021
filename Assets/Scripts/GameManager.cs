@@ -57,8 +57,20 @@ Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
         lastCheckpoint = checkpoint;
     }
 
-    public void RestartToCheckpoint(GameObject player) {
-        player.transform.position = lastCheckpoint.transform.position;
+    public void RestartToCheckpoint(GameObject player) 
+    {
+        StartCoroutine(RestartToCheckpointDelay(player)); 
+    }
+
+    private IEnumerator RestartToCheckpointDelay(GameObject player)
+    {
+        player.GetComponent<IHealth>()?.TakeDamage(1);
+        yield return new WaitForSeconds((float)0.3);
+
+        if (player.GetComponent<IHealth>()?.GetCurrentHealth() > 0)
+        {
+            player.transform.position = lastCheckpoint.transform.position;
+        }
     }
     public void TakeDamageEmptyHeart(int damage)
     {

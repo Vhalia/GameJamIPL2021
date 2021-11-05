@@ -220,11 +220,10 @@ GameObject:
   - component: {fileID: 1528417221912798621}
   - component: {fileID: 1528417221912798614}
   - component: {fileID: 153407595}
-  - component: {fileID: 265096468}
   - component: {fileID: 265096469}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,18 +383,6 @@ MonoBehaviour:
     m_Bits: 128
   attackRate: 1
   weaponDurability: 5
---- !u!114 &265096468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528417221912798620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f705ab2d44b851d4da5a62c84390eef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   damage: 1
 --- !u!114 &265096469
 MonoBehaviour:
@@ -413,7 +400,8 @@ MonoBehaviour:
   animHurtName: Hurt
   animDieName: Die
   animator: {fileID: 1528417221912798619}
-  invincibilityDuration: 1.5
+  invincibilityDuration: 1
+  fallAfterDeadDuration: 3
 --- !u!1 &1528417222378203508
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private LayerMask ennemyLayer;
     [SerializeField] private float attackRate;
     [SerializeField] private int weaponDurability;
+    [SerializeField] private int damage;
 
     private bool canAttack = true;
 
@@ -47,8 +48,7 @@ public class PlayerCombat : MonoBehaviour
         //Deal damage
         foreach (Collider2D ennemy in hitEnnemies)
         {
-            //TODO DEAL DAMAGE TO ENNEMIES
-            Debug.Log("Ennemy hit");
+            ennemy.GetComponent<IHealth>()?.TakeDamage(damage);
         }
 
         weaponDurability--;

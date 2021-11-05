@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128998658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.42, y: -0.56, z: -4.905472}
+  m_LocalPosition: {x: 1.42, y: -0.56, z: -1.37}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701297290335339201}
@@ -159,10 +159,10 @@ GameObject:
   - component: {fileID: 8701297290335339201}
   - component: {fileID: 8701297290335339203}
   - component: {fileID: 8701297290335339202}
-  - component: {fileID: 8701297290335339212}
   - component: {fileID: 8701297290335339215}
   - component: {fileID: 8701297290335339214}
   - component: {fileID: 715421336}
+  - component: {fileID: 2128973926}
   m_Layer: 7
   m_Name: Skeleton
   m_TagString: Untagged
@@ -260,19 +260,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8701297290335339212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701297290335339200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f705ab2d44b851d4da5a62c84390eef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!50 &8701297290335339215
 Rigidbody2D:
   serializedVersion: 4
@@ -307,8 +294,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36130923, y: 0.038792133}
-  m_Size: {x: 1.7101, y: 3.401513}
+  m_Offset: {x: 0.2025938, y: 0.038792133}
+  m_Size: {x: 2.7228642, y: 3.401513}
   m_Direction: 0
 --- !u!114 &715421336
 MonoBehaviour:
@@ -332,6 +319,24 @@ MonoBehaviour:
   runStateData: {fileID: 11400000, guid: 24015956bbb9715428cbfa5f759ee39e, type: 2}
   aggroStateData: {fileID: 11400000, guid: 6f797ecd32faab34ea2b849476730187, type: 2}
   attackStateData: {fileID: 11400000, guid: 03aca099bba26ba40b618905f7703b24, type: 2}
+--- !u!114 &2128973926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701297290335339200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682fcab87fa7445a9cb22260edca75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  animHurtName: Hurt
+  animDieName: Die
+  animator: {fileID: 8701297290335339202}
+  invincibilityDuration: 0
+  fallAfterDeadDuration: 0
 --- !u!1 &8701297290481339977
 GameObject:
   m_ObjectHideFlags: 0
