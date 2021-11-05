@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour, IHealth
 {
@@ -9,6 +10,8 @@ public class Health : MonoBehaviour, IHealth
     [SerializeField] private string animDieName;
     [SerializeField] private Animator animator;
     [SerializeField] private float invincibilityDuration;
+    [SerializeField] UnityEvent onDeath;
+    [SerializeField] IntEvent onDamage;
 
     private bool isDead = false;
     private int _currentHealth;
@@ -40,6 +43,7 @@ public class Health : MonoBehaviour, IHealth
     {
         _currentHealth -= damage;
         animator.SetTrigger(animHurtName);
+        onDamage?.Invoke(damage);
         if (_currentHealth <= 0)
             Die();
     }
@@ -75,6 +79,7 @@ public class Health : MonoBehaviour, IHealth
         {
             coll.enabled = false;
         }
+        onDeath?.Invoke();
 
         //Disable this script
         this.enabled = false;
