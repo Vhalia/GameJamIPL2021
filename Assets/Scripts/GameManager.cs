@@ -14,6 +14,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     [SerializeField] private Image filledHeart;
     [SerializeField] private Image emptyHeart;
     [SerializeField] private int numberOfHeart;
+    [SerializeField] private Image[] Swords;
+    [SerializeField] private int numberOfSwords;
 
     private GameObject lastCheckpoint;
 
@@ -37,6 +39,7 @@ Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
     public IEnumerator SwitchScene(string sceneToLoad, Action callback = null)
     {
         fillHeart();
+        fillSwords();
 
         if (SceneManager.sceneCount > 1)
         {
@@ -75,11 +78,15 @@ Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
     public void TakeDamageEmptyHeart(int damage)
     {
         for (int i = 0; i < damage; i++) {
-            Debug.Log("Coeur perdu");
             Health[numberOfHeart - 1].sprite = emptyHeart.sprite;
             numberOfHeart--;
         }
 
+    }
+    public void LooseOneSwordCharge() {
+        Debug.Log("je perd une grosse épée ça fait du bien");
+        Swords[numberOfSwords - 1].enabled = false;
+        numberOfSwords--;
     }
 
     private void fillHeart() {
@@ -87,6 +94,14 @@ Il faut ajouter dans le build pour que ça fonctionne (à faire à la fin )
         for (int i = 0; i < numberOfHeart; i++)
         {
             Health[i].sprite = filledHeart.sprite;
+        }
+    }
+
+    private void fillSwords() {
+        numberOfSwords = 5;
+        for (int i = 0; i < numberOfSwords; i++)
+        {
+            Swords[i].enabled = true;
         }
     }
 }

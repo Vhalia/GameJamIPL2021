@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private LayerMask ennemyLayer;
     [SerializeField] private float attackRate;
     [SerializeField] private int weaponDurability;
+    [SerializeField] UnityEvent onLooseSwordCharge;
     [SerializeField] private int damage;
 
     private bool canAttack = true;
@@ -52,6 +54,7 @@ public class PlayerCombat : MonoBehaviour
         }
 
         weaponDurability--;
+        onLooseSwordCharge?.Invoke();
     }
 
 

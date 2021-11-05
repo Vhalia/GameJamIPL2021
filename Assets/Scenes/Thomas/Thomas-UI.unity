@@ -20500,6 +20500,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1488941334}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LooseOneSwordCharge
+      objectReference: {fileID: 0}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManagerProxy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 153407595, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
+      propertyPath: onLooseSwordCharge.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 265096469, guid: eddb788c738bc084e880aa59753f6b00, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1

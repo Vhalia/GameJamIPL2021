@@ -10,4 +10,5 @@ public interface IGameManager
     void NewCheckpoint(GameObject checkpoint);
     void RestartToCheckpoint(GameObject player);
     void TakeDamageEmptyHeart(int damage);
+    public void LooseOneSwordCharge();
 }
