@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private Transform playerInRangeCheck;
+    [SerializeField] private Transform hitBoxAttackTransform;
 
 
     public FiniteStateMachine finiteStateMachine;
@@ -21,6 +22,7 @@ public class Entity : MonoBehaviour
     private RayCaster _groundCheckCast;
     private RayCaster _playerCheckCast;
     private RayCaster _playerInRangeCheckCast;
+    private OverlapMaker _hitBoxAttack;
 
     public virtual void Start()
     {
@@ -28,6 +30,7 @@ public class Entity : MonoBehaviour
         _groundCheckCast = groundCheck.GetComponent<RayCaster>();
         _playerCheckCast = playerCheck.GetComponent<RayCaster>();
         _playerInRangeCheckCast = playerInRangeCheck.GetComponent<RayCaster>();
+        _hitBoxAttack = hitBoxAttackTransform.GetComponent<OverlapMaker>();
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         FacingDirection = 1;
@@ -48,6 +51,11 @@ public class Entity : MonoBehaviour
     public virtual void SetVelocity(float velocity)
     {
         Rigidbody.velocity = new Vector2(FacingDirection * velocity * Time.fixedDeltaTime, Rigidbody.velocity.y);
+    }
+
+    public virtual GameObject ObjectInRangeOfAttack()
+    {
+        return _hitBoxAttack.OverlapHitGameObject();
     }
 
     public virtual bool WallIsDetected()
@@ -74,5 +82,10 @@ public class Entity : MonoBehaviour
     {
         FacingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void TeleportToPlayer()
+    {
+        finiteStateMachine.CurrentState.TeleportToPlayer();
     }
 }
