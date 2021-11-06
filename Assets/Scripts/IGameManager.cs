@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public interface IGameManager
@@ -11,4 +10,7 @@ public interface IGameManager
     void RestartToCheckpoint(GameObject player);
     void TakeDamageEmptyHeart(int damage);
     public void LooseOneSwordCharge();
+    public void addOneEnemyKill();
+    public void loadCreditScreen();
+    public void switchScreenOrPacific(string sceneToLoad);
 }
