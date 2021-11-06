@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6478057376109896427}
   - component: {fileID: 6478057376109896428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBoxAtk
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478057376109896426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -1.25, z: 0.65548515}
+  m_LocalPosition: {x: -3.23, y: -1.01, z: 0.65548515}
   m_LocalScale: {x: -0.67411, y: 0.67411, z: 0.67411}
   m_Children: []
   m_Father: {fileID: 6478057376703244499}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBoxAttack: {fileID: 6478057376109896426}
-  radius: 1.09
+  radius: 1.94
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
@@ -62,7 +62,8 @@ GameObject:
   - component: {fileID: 6478057376703244500}
   - component: {fileID: 6478057376703244502}
   - component: {fileID: 6478057376703244501}
-  m_Layer: 0
+  - component: {fileID: 6478057377140665611}
+  m_Layer: 7
   m_Name: BringerOfDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 6478057376703244496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.46, y: -5.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 6478057376109896427}
   - {fileID: 6478057377644437223}
@@ -153,8 +154,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2259922, y: -1.0811963}
-  m_Size: {x: 2.7716198, y: 3.6365767}
+  m_Offset: {x: -0.00608325, y: -0.9840696}
+  m_Size: {x: 2.9015174, y: 3.570126}
   m_Direction: 0
 --- !u!50 &6478057376703244500
 Rigidbody2D:
@@ -196,6 +197,9 @@ MonoBehaviour:
   hitBoxAttackTransform: {fileID: 6478057376109896427}
   entityData: {fileID: 11400000, guid: e368591775dbde34d90825ad8b6c1a29, type: 2}
   idleStateData: {fileID: 11400000, guid: 35395520b807e254b83cc1d292f815f3, type: 2}
+  runStateData: {fileID: 11400000, guid: b0a64d3efbd0e4346a5e55f15a106847, type: 2}
+  aggroStateData: {fileID: 11400000, guid: f56a74dbfa59183438a226b284e50b4a, type: 2}
+  attackStateData: {fileID: 11400000, guid: 2f758bc6fe9973c4bba1f615f88c5783, type: 2}
 --- !u!95 &6478057376703244501
 Animator:
   serializedVersion: 3
@@ -215,6 +219,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6478057377140665611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6478057376703244496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18682fcab87fa7445a9cb22260edca75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 4
+  animHurtName: hurt
+  animDieName: die
+  animator: {fileID: 6478057376703244501}
+  invincibilityDuration: 0
+  fallAfterDeadDuration: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6478057376987474314
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478057376987474314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.19, y: -3.03, z: 1.5790176}
+  m_LocalPosition: {x: -1.07, y: -2.98, z: 1.5790176}
   m_LocalScale: {x: 0.67411, y: 0.67411, z: 0.67411}
   m_Children: []
   m_Father: {fileID: 6478057376703244499}
@@ -290,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478057377145622315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -2.22, z: 1.5790176}
+  m_LocalPosition: {x: -0.37, y: -2.07, z: 1.5790176}
   m_LocalScale: {x: 0.67411, y: 0.67411, z: 0.67411}
   m_Children: []
   m_Father: {fileID: 6478057376703244499}
@@ -313,7 +341,7 @@ MonoBehaviour:
   layersMask:
     serializedVersion: 2
     m_Bits: 64
-  distance: 2
+  distance: 2.75
   direction: {x: 1, y: 0}
 --- !u!1 &6478057377644437222
 GameObject:
@@ -340,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478057377644437222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.81, y: -1.71, z: 1.5790176}
+  m_LocalPosition: {x: -0.74, y: -1.61, z: 1.5790176}
   m_LocalScale: {x: 0.67411, y: 0.67411, z: 0.67411}
   m_Children: []
   m_Father: {fileID: 6478057376703244499}
@@ -363,7 +391,7 @@ MonoBehaviour:
   layersMask:
     serializedVersion: 2
     m_Bits: 8
-  distance: 1
+  distance: 3
   direction: {x: 1, y: 0}
 --- !u!1 &6478057377975903975
 GameObject:
@@ -390,7 +418,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478057377975903975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.85, y: -1.91, z: 1.5790176}
+  m_LocalPosition: {x: -0.37, y: -1.89, z: 1.5790176}
   m_LocalScale: {x: 0.67411, y: 0.67411, z: 0.67411}
   m_Children: []
   m_Father: {fileID: 6478057376703244499}
@@ -413,5 +441,5 @@ MonoBehaviour:
   layersMask:
     serializedVersion: 2
     m_Bits: 8
-  distance: 5
+  distance: 10
   direction: {x: 1, y: 0}
