@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,12 +14,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CapsuleCollider2D standingCollider;
     [SerializeField] private GameObject ceilingCheck;
     [SerializeField] private float ceilingCheckRadius;
+    [SerializeField] private AudioManager audioManager;
 
     private Rigidbody2D rb;
     private float moveInput;
     private bool canJump = false;
     private bool isFacingRight = true;
     private bool isCrouched = false;
+    private bool stepEnded = true;
+    private bool isGrounded = true;
 
     public bool goesRight => Input.GetAxisRaw("Horizontal") == 1;
     public bool goesLeft => Input.GetAxisRaw("Horizontal") == -1;
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Setup conditions for jumping
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
         playerAnimator.SetBool("isGrounded", isGrounded);
 
         moveInput = Input.GetAxisRaw("Horizontal");
@@ -67,9 +71,20 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
+    private IEnumerator StepSound() {
+        audioManager.Play("step");
+        yield return new WaitForSeconds(0.5f);
+        stepEnded = true;
+        
+    }
     private void Move()
     {
+        Debug.Log(moveInput);
+        if (moveInput != 0 && stepEnded && isGrounded) {
+            StartCoroutine(StepSound());
+            stepEnded = false;
+            
+        }
         rb.velocity = new Vector2(moveInput * speed * Time.fixedDeltaTime, rb.velocity.y);
         playerAnimator.SetFloat("speed", Mathf.Abs(rb.velocity.x));
 

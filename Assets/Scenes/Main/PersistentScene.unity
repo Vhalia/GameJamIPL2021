@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistent: 1
-  firstScene: Max-Level1-AttackEnemy
+  firstScene: Level1
   OnNewGame:
     m_PersistentCalls:
       m_Calls: []
