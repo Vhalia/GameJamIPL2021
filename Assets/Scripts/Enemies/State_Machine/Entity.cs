@@ -7,6 +7,8 @@ public class Entity : MonoBehaviour
     public Animator Animator { get; private set; }
     public int FacingDirection { get; private set; }
     public bool CanTriggerAttack { get; private set; }
+    public bool AttackAnimationEnded { get; private set; }
+    public bool AttackAnimationStarted { get; private set; }
 
 
     [SerializeField] private Transform wallCheck;
@@ -15,7 +17,6 @@ public class Entity : MonoBehaviour
     [SerializeField] private Transform playerInRangeCheck;
     [SerializeField] private Transform hitBoxAttackTransform;
 
-
     public FiniteStateMachine finiteStateMachine;
     public Data_Entity entityData;
 
@@ -23,6 +24,7 @@ public class Entity : MonoBehaviour
     private RayCaster _groundCheckCast;
     private RayCaster _playerCheckCast;
     private RayCaster _playerInRangeCheckCast;
+    private RayCaster _playerInRangeAttackCheckCast;
     private OverlapMaker _hitBoxAttack;
 
     public virtual void Start()
@@ -35,6 +37,8 @@ public class Entity : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
         FacingDirection = 1;
+        AttackAnimationEnded = false;
+        CanTriggerAttack = false;
         if (Rigidbody == null || Animator == null) throw new MissingFieldException("No rigidbody or animator find in entity");
         finiteStateMachine = new FiniteStateMachine();
     }
@@ -79,6 +83,11 @@ public class Entity : MonoBehaviour
         return _playerInRangeCheckCast.RayHasTouched(FacingDirection);
     }
 
+    public virtual bool PlayerIsInRangeAttack()
+    {
+        return _playerInRangeAttackCheckCast.RayHasTouched(FacingDirection);
+    }
+
     public virtual void Flip()
     {
         FacingDirection *= -1;
@@ -97,6 +106,13 @@ public class Entity : MonoBehaviour
 
     public virtual void AttackAnimationHasFinished()
     {
+        AttackAnimationEnded = true;
         CanTriggerAttack = false;
+        AttackAnimationStarted = false;
+    }
+    public virtual void AttackAnimationHasStarted()
+    {
+        AttackAnimationEnded = false;
+        AttackAnimationStarted = true;
     }
 }
