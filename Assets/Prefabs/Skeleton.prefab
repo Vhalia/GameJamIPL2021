@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBoxAttack: {fileID: 1128998658}
-  radius: 1.26
+  radius: 1.09
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 8701297290335339200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.34, y: 1.91, z: 4.9054713}
-  m_LocalScale: {x: 0.51691675, y: 0.51691675, z: 0.51691675}
+  m_LocalScale: {x: 0.6741111, y: 0.6741111, z: 0.6741111}
   m_Children:
   - {fileID: 8701297290481339978}
   - {fileID: 8701297291278709055}
@@ -294,8 +294,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34608316, y: -0.009037256}
-  m_Size: {x: 1.216239, y: 3.3058543}
+  m_Offset: {x: 0.33717015, y: -0.009037192}
+  m_Size: {x: 2.1253273, y: 3.3058543}
   m_Direction: 0
 --- !u!114 &715421336
 MonoBehaviour:

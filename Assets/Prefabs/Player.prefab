@@ -363,6 +363,7 @@ MonoBehaviour:
   standingCollider: {fileID: 1353655147}
   ceilingCheck: {fileID: 1544563429693839936}
   ceilingCheckRadius: 0.2
+  audioManager: {fileID: 0}
 --- !u!114 &153407595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1528417221912798619}
   attackPoint: {fileID: 2093863463}
-  attackRange: 0.53
+  attackRange: 0.74
   ennemyLayer:
     serializedVersion: 2
     m_Bits: 128

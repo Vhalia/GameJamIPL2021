@@ -24,16 +24,15 @@ public class BasicEnemy_AttackState : AttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-
         if (!isPlayerInRange)
         {
             Debug.Log(basicEnemy + " attack -> run");
             finiteStateMachine.ChangeState(basicEnemy.runState);
         }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

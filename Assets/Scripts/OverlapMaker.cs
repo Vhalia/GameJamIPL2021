@@ -11,7 +11,7 @@ public class OverlapMaker : MonoBehaviour
     public GameObject OverlapHitGameObject()
     {
         Collider2D collider = Physics2D.OverlapCircle(hitBoxAttack.transform.position, radius, whatIsPlayer);
-        return collider ? collider.gameObject : null;
+        return collider ? collider.attachedRigidbody.gameObject : null;
     }
 
     private void OnDrawGizmos()
