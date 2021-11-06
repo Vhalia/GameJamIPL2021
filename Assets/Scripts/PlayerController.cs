@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
-        Debug.Log(moveInput);
         if (moveInput != 0 && stepEnded && isGrounded) {
             StartCoroutine(StepSound());
             stepEnded = false;

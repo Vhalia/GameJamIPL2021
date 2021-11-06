@@ -7,4 +7,5 @@ public class Data_AggroState : ScriptableObject
 {
     public GameObject player;
     public float movementSpeed;
+    public Transform playerInRangeAttackCheck;
 }
