@@ -48,4 +48,8 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
     public void loadCreditScreen() {
         GameManager.instance.loadCreditScreen();
     }
+
+    public void switchScreenOrPacific(string sceneToLoad) {
+        GameManager.instance.switchScreenOrPacific(sceneToLoad);
+    }
 }
