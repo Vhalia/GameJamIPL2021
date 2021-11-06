@@ -16,8 +16,12 @@ public class GameManager : SingletonBehaviour<GameManager>
     [SerializeField] private int numberOfHeart;
     [SerializeField] private Image[] Swords;
     [SerializeField] private int numberOfSwords;
+    [SerializeField] private UnityEvent creditWarrior;
+    [SerializeField] private UnityEvent creditPacific;
+    [SerializeField] private UnityEvent onTriggerEndDoor;
 
     private GameObject lastCheckpoint;
+    private int killCounter = 0;
 
     public void Start()
     {
@@ -104,6 +108,19 @@ public class GameManager : SingletonBehaviour<GameManager>
         for (int i = 0; i < numberOfSwords; i++)
         {
             Swords[i].enabled = true;
+        }
+    }
+    public void addOneEnemyKill() {
+        killCounter++;
+    }
+
+    public void loadCreditScreen() {
+        if (killCounter == 0)
+        {
+            creditPacific?.Invoke();
+        }
+        else {
+            creditWarrior?.Invoke();
         }
     }
 }
