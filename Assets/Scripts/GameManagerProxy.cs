@@ -40,4 +40,12 @@ public class GameManagerProxy : MonoBehaviour, IGameManager
     public void LooseOneSwordCharge() {
         GameManager.instance.LooseOneSwordCharge();
     }
+
+    public void addOneEnemyKill() {
+        GameManager.instance.addOneEnemyKill();
+    }
+
+    public void loadCreditScreen() {
+        GameManager.instance.loadCreditScreen();
+    }
 }

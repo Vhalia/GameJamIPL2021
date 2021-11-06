@@ -11,4 +11,6 @@ public interface IGameManager
     void RestartToCheckpoint(GameObject player);
     void TakeDamageEmptyHeart(int damage);
     public void LooseOneSwordCharge();
+    public void addOneEnemyKill();
+    public void loadCreditScreen();
 }
