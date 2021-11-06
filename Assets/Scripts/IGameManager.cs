@@ -13,4 +13,5 @@ public interface IGameManager
     public void LooseOneSwordCharge();
     public void addOneEnemyKill();
     public void loadCreditScreen();
+    public void switchScreenOrPacific(string sceneToLoad);
 }

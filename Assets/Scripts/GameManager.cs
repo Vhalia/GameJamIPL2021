@@ -34,7 +34,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     }
 
     public void StartNewGame()
-    {     
+    {
+        killCounter = 0;
         StartCoroutine(SwitchScene(firstScene, () => OnNewGame?.Invoke()));
     }
     public void StartSwitchSceneCoroutine(string sceneToLoad) {
@@ -115,12 +116,19 @@ public class GameManager : SingletonBehaviour<GameManager>
     }
 
     public void loadCreditScreen() {
+
+            creditWarrior?.Invoke();
+        
+    }
+    public void switchScreenOrPacific(string sceneToLoad)
+    {
         if (killCounter == 0)
         {
             creditPacific?.Invoke();
         }
-        else {
-            creditWarrior?.Invoke();
+        else
+        {
+            StartCoroutine(SwitchScene(sceneToLoad));
         }
     }
 }

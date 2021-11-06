@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/Level2.unity
     guid: 85e6fe5cb1b89524ab59a5a645949c79
+  - enabled: 1
+    path: Assets/Scenes/Main/LevelBoss.unity
+    guid: 818a3d3a8273df84bb6b924ab25162fa
   - enabled: 0
-    path: Assets/Scenes/Max/Max-Level02-Design.unity
+    path: 
     guid: 9d335672170856649944e20d17305692
   m_configObjects: {}
