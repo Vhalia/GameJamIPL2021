@@ -25,6 +25,7 @@ public class Health : MonoBehaviour, IHealth
 
     public void TakeDamage(int damage)
     {
+        if (_currentHealth <= 0) return;
         if (canBeDamaged)
         {
             StartCoroutine(LoseHealthDelay(damage));

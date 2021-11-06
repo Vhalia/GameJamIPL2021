@@ -33,7 +33,7 @@ public class BasicEnemy_IdleState : IdleState
         base.PhysicsUpdate();
         if(isPlayerDetected)
         {
-            Debug.Log(basicEnemy + " idle -> aggro ");
+
             finiteStateMachine.ChangeState(basicEnemy.aggroState);
         }
     }

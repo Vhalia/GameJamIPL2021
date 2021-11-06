@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2c5c9752ba13a42838b55da0868f49, type: 3}
   m_Name: deathBringerIdleData
   m_EditorClassIdentifier: 
-  minIdleTime: 1
-  maxIdleTime: 1.1
+  minIdleTime: 0.2
+  maxIdleTime: 0.7
