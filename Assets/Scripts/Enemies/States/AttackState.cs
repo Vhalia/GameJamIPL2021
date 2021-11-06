@@ -1,4 +1,6 @@
 
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class AttackState : State
@@ -16,6 +18,7 @@ public class AttackState : State
     {
         base.Enter();
         gameObjectInAttackRange = entity.ObjectInRangeOfAttack();
+        entity.SetVelocity(0f);
     }
 
     public override void Exit()
@@ -26,15 +29,15 @@ public class AttackState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (gameObjectInAttackRange != null && entity.CanTriggerAttack)
+        {
+            gameObjectInAttackRange.GetComponent<IHealth>()?.TakeDamage(stateData.damage);
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
         gameObjectInAttackRange = entity.ObjectInRangeOfAttack();
-        if (gameObjectInAttackRange != null)
-        {
-            Debug.Log("Colliqion" + gameObjectInAttackRange);
-        }
     }
 }

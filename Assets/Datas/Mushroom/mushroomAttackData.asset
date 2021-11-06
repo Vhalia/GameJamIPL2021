@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ddbb6302e11b447970bca899ee667f, type: 3}
   m_Name: mushroomAttackData
   m_EditorClassIdentifier: 
+  damage: 1
+  attackRate: 2

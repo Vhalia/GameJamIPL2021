@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -6,6 +7,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D Rigidbody { get; private set; }
     public Animator Animator { get; private set; }
     public int FacingDirection { get; private set; }
+    public bool CanTriggerAttack { get; private set; }
 
 
     [SerializeField] private Transform wallCheck;
@@ -84,8 +86,18 @@ public class Entity : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    public void TeleportToPlayer()
+    public virtual void TeleportToPlayer()
     {
         finiteStateMachine.CurrentState.TeleportToPlayer();
+    }
+
+    public virtual void TriggerAttack()
+    {
+        CanTriggerAttack = true;
+    }
+
+    public virtual void AttackAnimationHasFinished()
+    {
+        CanTriggerAttack = false;
     }
 }
