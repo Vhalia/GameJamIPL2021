@@ -49,11 +49,9 @@ public class GameManager : SingletonBehaviour<GameManager>
         if (SceneManager.sceneCount > 1)
         {
             var currentScene = SceneManager.GetActiveScene().name;
-            Debug.Log(currentScene);
             yield return SceneManager.UnloadSceneAsync(currentScene);
 
         }
-        Debug.Log("Load new scene");
         yield return SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
         callback?.Invoke();
@@ -85,6 +83,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     }
     public void TakeDamageEmptyHeart(int damage)
     {
+        if (numberOfHeart <= 0) return;
         for (int i = 0; i < damage; i++) {
             Health[numberOfHeart - 1].sprite = emptyHeart.sprite;
             numberOfHeart--;

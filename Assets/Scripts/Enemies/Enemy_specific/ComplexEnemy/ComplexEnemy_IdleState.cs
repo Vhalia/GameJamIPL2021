@@ -32,7 +32,6 @@ public class ComplexEnemy_IdleState : IdleState
         base.PhysicsUpdate();
         if (isPlayerDetected)
         {
-            Debug.Log(complexEnemy + " idle -> aggro ");
             finiteStateMachine.ChangeState(complexEnemy.aggroState);
         }
     }

@@ -24,7 +24,6 @@ public class BasicEnemy_AttackState : AttackState
         base.LogicUpdate();
         if (!isPlayerInRange)
         {
-            Debug.Log(basicEnemy + " attack -> run");
             finiteStateMachine.ChangeState(basicEnemy.runState);
         }
     }

@@ -40709,7 +40709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452936773}
   m_LocalRotation: {x: -0.0019267772, y: -6.72123e-11, z: -1.2950338e-13, w: 0.99999815}
-  m_LocalPosition: {x: 46.8, y: 5.7, z: -10}
+  m_LocalPosition: {x: 47.66, y: 3.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 673894318}
@@ -65591,7 +65591,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cc9307cc577956945aa05a0f5c824c73, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.197
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -65821,6 +65821,22 @@ PrefabInstance:
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 839578395, guid: fdb63796260fb004386e569324916332, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1066875
+      objectReference: {fileID: 0}
+    - target: {fileID: 839578395, guid: fdb63796260fb004386e569324916332, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.39561844
+      objectReference: {fileID: 0}
+    - target: {fileID: 839578395, guid: fdb63796260fb004386e569324916332, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 855811632, guid: fdb63796260fb004386e569324916332, type: 3}
+      propertyPath: radius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5178910606226518103, guid: fdb63796260fb004386e569324916332,
         type: 3}
       propertyPath: m_RootOrder
@@ -65880,6 +65896,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TroVener
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348160809629981859, guid: fdb63796260fb004386e569324916332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348160809629981859, guid: fdb63796260fb004386e569324916332,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb63796260fb004386e569324916332, type: 3}
@@ -66006,12 +66032,12 @@ PrefabInstance:
     - target: {fileID: 1528417221912798617, guid: eddb788c738bc084e880aa59753f6b00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.8
+      value: 47.66
       objectReference: {fileID: 0}
     - target: {fileID: 1528417221912798617, guid: eddb788c738bc084e880aa59753f6b00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.7
+      value: 3.29
       objectReference: {fileID: 0}
     - target: {fileID: 1528417221912798617, guid: eddb788c738bc084e880aa59753f6b00,
         type: 3}

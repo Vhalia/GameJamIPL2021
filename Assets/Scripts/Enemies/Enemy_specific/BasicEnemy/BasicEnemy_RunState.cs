@@ -1,4 +1,3 @@
-using UnityEngine;
 
 public class BasicEnemy_RunState : RunState
 {
@@ -36,7 +35,6 @@ public class BasicEnemy_RunState : RunState
         base.PhysicsUpdate();
         if(isPlayerDetected)
         {
-            Debug.Log(basicEnemy + " run -> aggro ");
             finiteStateMachine.ChangeState(basicEnemy.aggroState);
         }
     }

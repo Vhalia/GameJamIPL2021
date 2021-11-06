@@ -1,4 +1,3 @@
-using UnityEngine;
 
 public class BasicEnemy_AggroState : AggroState
 {
@@ -30,11 +29,9 @@ public class BasicEnemy_AggroState : AggroState
         Rush();
         if (!isPlayerDetected)
         {
-            Debug.Log(basicEnemy + " aggro -> run ");
             finiteStateMachine.ChangeState(basicEnemy.runState);
         }else if (isPlayerInRange)
         {
-            Debug.Log(basicEnemy + " aggro -> attack");
             finiteStateMachine.ChangeState(basicEnemy.attackState);
         }
     }
