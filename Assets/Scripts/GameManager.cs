@@ -84,7 +84,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void TakeDamageEmptyHeart(int damage)
     {
         if (numberOfHeart <= 0) return;
-        for (int i = 0; i < damage; i++) {
+        for (int i = 0; numberOfHeart - 1 >= 0 && i < damage; i++) {
             Health[numberOfHeart - 1].sprite = emptyHeart.sprite;
             numberOfHeart--;
         }
